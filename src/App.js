@@ -1,22 +1,13 @@
-import logo from './logo.svg';
+import CardHome from './components/cardHome';
+import backgroundImg from './img/bg-main.jpg'
+import 'antd/dist/reset.css';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-content" style={{backgroundImage:`url(${backgroundImg})`,backgroundRepeat:"no-repeat", backgroundSize:"auto"}}>
+      <CardHome />
       </header>
     </div>
   );
