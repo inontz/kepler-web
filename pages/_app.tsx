@@ -18,7 +18,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           .init({ liffId: process.env.NEXT_PUBLIC_LIFF_ID! })
           .then(() => {
             console.log("LIFF init succeeded.");
+
             setLiffObject(liff);
+            debugger
           })
           .catch((error: Error) => {
             console.log("LIFF init failed.");

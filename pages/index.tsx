@@ -10,13 +10,17 @@ const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
   return (
     <div>
       <Head>
-        <title>LIFF App</title>
+        <title>Kepler</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/kepler-website-favicon-color.png" />
       </Head>
 
       <main className={styles.main}>
-        <h1>create-liff-app</h1>
+        <div className="flex justify-center ...">
+          <img className="object-contain object-center h-96 w-96" src="/logo-no-background.svg" alt="Kepler"></img> 
+        </div>
+  
+        <h1 className="text-3xl font-bold underline"> Hello world! </h1>
         {liff && <p>LIFF init succeeded.</p>}
         {liffError && (
           <>
@@ -27,6 +31,12 @@ const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
           </>
         )}
         <a
+          href="/profile"
+        >
+          Click To See My Profile
+        </a>
+        
+        <a
           href="https://developers.line.biz/ja/docs/liff/"
           target="_blank"
           rel="noreferrer"
@@ -34,6 +44,9 @@ const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
           LIFF Documentation
         </a>
       </main>
+       {/* <picture>
+            <img className="object-none object-cente w-24 h-24" src="/logo-no-background.svg" alt="Kepler"></img>
+        </picture> */}
     </div>
   );
 };

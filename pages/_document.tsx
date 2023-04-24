@@ -4,9 +4,9 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
-        <Main />
-        <NextScript />
+      <body className="bg-gradient-to-r from-transparent via-white to-red-300">
+          <Main />
+          <NextScript />
       </body>
     </Html>
   )
