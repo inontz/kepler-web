@@ -33,7 +33,7 @@ export default function Profile() {
         <title>My Profile</title>
       </Head>
       <h1>Profile</h1>
-      <div>
+      {/* <div>
         {profile.pictureUrl && (
           <Image
             src={profile.pictureUrl}
@@ -44,7 +44,7 @@ export default function Profile() {
         )}
         <div>OS: { os.os } </div>
         <div>Name: {profile.displayName}</div>
-      </div>
+      </div> */}
     </section>
   );
 }

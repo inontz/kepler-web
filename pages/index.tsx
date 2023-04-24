@@ -1,7 +1,8 @@
-import type { Liff } from "@line/liff";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { Liff } from "@line/liff/exports";
 
 const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
   liff,
@@ -17,7 +18,7 @@ const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
 
       <main className={styles.main}>
         <div className="flex justify-center ...">
-          <img className="object-contain object-center h-96 w-96" src="/logo-no-background.svg" alt="Kepler"></img> 
+          <Image className="object-contain object-center h-96 w-96" src="/logo-no-background.svg" alt="Kepler" />
         </div>
   
         <h1 className="text-3xl font-bold underline"> Hello world! </h1>
@@ -30,11 +31,11 @@ const Home: NextPage<{ liff: Liff | null; liffError: string | null }> = ({
             </p>
           </>
         )}
-        <a
+        {/* <a
           href="/profile"
         >
           Click To See My Profile
-        </a>
+        </a> */}
         
         <a
           href="https://developers.line.biz/ja/docs/liff/"
