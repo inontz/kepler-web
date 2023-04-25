@@ -1,9 +1,25 @@
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [profile, setProfile] = useState({});
+  useEffect(() => {
+    async function liffGetPro() {
+      const liff = (await import("@line/liff")).default;
+      await liff.ready;
+      try {
+        const profile = await liff.getProfile();
+        setProfile(profile);
+      } catch (err) {
+        console.error("liff get error", err.message);
+      }
+    }
+    liffGetPro();
+  }, [profile.userId]);
+
   return (
     <main
       className={`flex min-h-screen flex-col items-center ${inter.className}`}
@@ -24,7 +40,7 @@ export default function Home() {
           type="button"
           class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
         >
-          Alternative
+          {profile.displayName}
         </button>
         {/* <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"

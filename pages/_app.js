@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "@/styles/globals.css";
 
 const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
@@ -15,8 +15,6 @@ export default function App({ Component, pageProps }) {
       if (!liff.isLoggedIn()) {
         liff.login();
       }
-      liff.getProfile();
-      debugger;
     }
     liffLogin();
   }, []);
