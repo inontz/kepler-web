@@ -4,7 +4,6 @@ import "@/styles/globals.css";
 const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
 
 export default function App({ Component, pageProps }) {
-  const [profile, setProfile] = useState({});
   useEffect(() => {
     async function liffLogin() {
       const liff = (await import("@line/liff")).default;
@@ -16,13 +15,10 @@ export default function App({ Component, pageProps }) {
       if (!liff.isLoggedIn()) {
         liff.login();
       }
-
-      await liff.ready;
-      const profile = await liff.getProfile();
-      setProfile(profile);
+      liff.getProfile();
       debugger;
     }
     liffLogin();
-  }, [profile.userId]);
+  }, []);
   return <Component {...pageProps} />;
 }
