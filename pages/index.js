@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import Head from "next/head";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
+Home.title = "Home";
 
 export default function Home() {
   const [profile, setProfile] = useState({});
@@ -38,9 +41,9 @@ export default function Home() {
       <div className="mb-32 grid text-center lg:mb-0 lg:text-left">
         <button
           type="button"
-          class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          className="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
         >
-          {profile.displayName}
+          <Link href="/profile">Continue with {profile.displayName}</Link>
         </button>
         {/* <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"

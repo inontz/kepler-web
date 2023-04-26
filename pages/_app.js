@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "@/styles/globals.css";
+import Head from "next/head";
 
 const liffId = process.env.NEXT_PUBLIC_LIFF_ID;
 
@@ -18,5 +19,22 @@ export default function App({ Component, pageProps }) {
     }
     liffLogin();
   }, []);
-  return <Component {...pageProps} />;
+  return (
+    <div>
+      <Head>
+        <title>{Component.title} | Kepler 🚀</title>
+        <meta charset="UTF-8" />
+        <meta name="keywords" content="titla, meta, nextjs" />
+        <meta name="author" content="Syamlal CM" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <Component {...pageProps} />
+    </div>
+    // <>
+    //   <Head>
+    //     <title</title>
+    //   </Head>
+    //   <Component {...pageProps} />
+    // </>
+  );
 }
